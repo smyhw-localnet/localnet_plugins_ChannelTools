@@ -40,7 +40,7 @@ public class lnp
 		{
 		case "help":
 		{
-			User.Smsg("Channel Tools\n"
+			User.sendMsg("Channel Tools\n"
 					+ "nospeak <频道ID> --将某个频道禁言\n"
 					+ "---\n"
 					+ "powered by smyhw");
@@ -50,18 +50,18 @@ public class lnp
 		{
 			if(CommandFJ.js(cmd)<3) 
 			{
-				User.Smsg("参数不足");
+				User.sendMsg("参数不足");
 				return;
 			}
 			String temp2 = CommandFJ.fj(cmd, 2);
 			CLconfig.set("nospeak."+temp2, true);
 			DataManager.SaveConfig("./configs/ChannelTools.config", CLconfig);
-			User.Smsg("已将频道<"+temp2+">禁言");
+			User.sendMsg("已将频道<"+temp2+">禁言");
 			return;
 		}
 		default:
 		{
-			User.Smsg("未知的ChannelTools指令");
+			User.sendMsg("未知的ChannelTools指令");
 			return;
 		}
 		}
