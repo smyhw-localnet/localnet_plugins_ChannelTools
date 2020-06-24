@@ -69,7 +69,7 @@ public class lnp
 	
 	public static void lr(ChatINFO_Event dd)
 	{
-		int pd = lib.getChannel(dd.From_User.ID);
+		int pd = lib.getChannel(dd.From_User.remoteID);
 		if(CLconfig.get_boolean("nospeak."+pd)) {dd.Cancel=true;}
 	}
 	
